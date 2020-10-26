@@ -30,7 +30,7 @@ pipeline {
 		sh 'aws ecr get-login --no-include-email'
 	    } 		    
         }
-        stage('Push image to ECR){
+        stage('Push image to ECR'){
 	    steps {
 		echo 'Push image to ECR'
 		sh 'docker tag myapp:1 527858808128.dkr.ecr.ap-south-1.amazonaws.com/docker-ecr:1' 

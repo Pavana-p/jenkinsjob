@@ -23,7 +23,12 @@ pipeline {
 	        echo 'build docker image'
 		sh 'docker build -t myimage:1 .'
 	    }
-	}    
-    }
+	}
+        stage('Login to ECR'){
+            steps {
+		echo 'login to ECR'
+		sh 'aws ecr get-login --no-include-email'
+	    } 		    
+        }  
+   }
 }
-

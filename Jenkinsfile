@@ -36,6 +36,12 @@ pipeline {
 		sh 'docker tag myimage:1 527858808128.dkr.ecr.ap-south-1.amazonaws.com/docker-ecr:1' 
 		sh 'docker push 527858808128.dkr.ecr.ap-south-1.amazonaws.com/docker-ecr:1'
 	    }	    
-        }      
+        } 
+	stage(('Ansible Ping'){
+            steps {
+                echo 'Ansible Ping'
+                sh 'ansible all_hosts -m ping'
+	    }	    
+	}  
    }
 }

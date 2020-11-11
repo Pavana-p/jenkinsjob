@@ -45,7 +45,7 @@ pipeline {
 	} 
 	stage('Ansible Playbook to pull image from ECR to docker engines and start container'){
             steps {
-                echo 'Ansible playbook to pull image from ECR to docker engines and start Container' 
+                echo 'Ansible playbook to pull Image from ECR to docker engines and start Container' 
                 sh 'ansible-playbook dockercon.yml --syntax-check'
                 sh 'ansible-playbook dockercon.yml'
 	    }	    

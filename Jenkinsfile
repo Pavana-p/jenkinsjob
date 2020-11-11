@@ -40,7 +40,7 @@ pipeline {
 	stage('Ansible Ping'){
             steps {
                 echo 'Ansible Ping'
-                sh 'ansible all_hosts -m ping'
+                sh 'ansible all_hosts -m ping --user root'
 	    }	    
 	}  
    }
